@@ -5,6 +5,4 @@ function getAnimalsOlderThan(animal, age) {
   return residents.every(({ age: ageAnimal }) => ageAnimal >= age);
 }
 
-console.log(getAnimalsOlderThan('otters', 7));
-
 module.exports = getAnimalsOlderThan;
