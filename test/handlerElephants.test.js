@@ -59,4 +59,7 @@ describe('Testes da função HandlerElephants', () => {
   it('Testa se handlerElephants("chaolinMatadorDePorco") retorna null', () => {
     expect(handlerElephants('chaolinMatadorDePorco')).toBeNull();
   });
+  it('Testa se handlerElephants("averageAge") retorna null', () => {
+    expect(handlerElephants('averageAge')).toBe(10.5);
+  });
 });
