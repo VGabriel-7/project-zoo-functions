@@ -35,4 +35,4 @@ const handlerElephants = (param) => {
 
 console.log(handlerElephants('averageAge'));
 
-module.exports = { handlerElephants, getElephants, averageAge };
+module.exports = handlerElephants;
