@@ -1,40 +1,6 @@
-const { handlerElephants, getElephants, averageAge } = require('../src/handlerElephants');
+const { handlerElephants } = require('../src/handlerElephants');
 
 describe('Testes da função HandlerElephants', () => {
-  it('Testa se a função getElephants() retorna o objeto com o da especie elefante.', () => {
-    const expected = {
-      id: 'bb2a76d8-5fe3-4d03-84b7-dba9cfc048b5',
-      name: 'elephants',
-      popularity: 5,
-      location: 'NW',
-      availability: ['Friday', 'Saturday', 'Sunday', 'Tuesday'],
-      residents: [
-        { name: 'Ilana', sex: 'female', age: 11 },
-        { name: 'Orval', sex: 'male', age: 15 },
-        { name: 'Bea', sex: 'female', age: 12 },
-        { name: 'Jefferson', sex: 'male', age: 4 },
-      ],
-    };
-    const actual = getElephants();
-    expect(actual).toEqual(expected);
-  });
-  it('Testa se a função averageAge() retorna a média de idade dos elefantes.', () => {
-    const expected = {
-      id: 'bb2a76d8-5fe3-4d03-84b7-dba9cfc048b5',
-      name: 'elephants',
-      popularity: 5,
-      location: 'NW',
-      availability: ['Friday', 'Saturday', 'Sunday', 'Tuesday'],
-      residents: [
-        { name: 'Ilana', sex: 'female', age: 11 },
-        { name: 'Orval', sex: 'male', age: 15 },
-        { name: 'Bea', sex: 'female', age: 12 },
-        { name: 'Jefferson', sex: 'male', age: 4 },
-      ],
-    };
-    const actual = averageAge(expected);
-    expect(actual).toBe(10.5);
-  });
   it('Testa se computedData("count") retorna qunatos elefantes tem no zoo.', () => {
     expect(handlerElephants('count')).toBe(4);
   });
