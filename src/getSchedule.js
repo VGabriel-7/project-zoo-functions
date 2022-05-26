@@ -25,7 +25,6 @@ const getADay = (day) => {
 };
 
 const getAllSchedules = () => {
-  // const hour = Object.values(data.hours);
   const allDays = Object.keys(data.hours);
   return allDays.reduce((acc, curr, idx) => ({
     ...acc,
@@ -42,6 +41,5 @@ function getSchedule(scheduleTarget) {
   }
   return getAllSchedules();
 }
-console.log(getSchedule('Tuesday'));
 
 module.exports = getSchedule;
