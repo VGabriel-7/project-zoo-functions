@@ -24,13 +24,8 @@ const getADay = (day) => {
   };
 };
 
-const getAllSchedules = () => {
-  const allDays = Object.keys(data.hours);
-  return allDays.reduce((acc, curr, idx) => ({
-    ...acc,
-    [curr]: getADay(curr),
-  }), {});
-};
+const getAllSchedules = () => Object.keys(data.hours).reduce((acc, curr) => ({
+  ...acc, [curr]: getADay(curr) }), {});
 
 function getSchedule(scheduleTarget) {
   const arrayAnimals = data.species.map((animal) => animal.name);
