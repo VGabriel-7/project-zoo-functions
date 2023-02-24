@@ -18,12 +18,13 @@ const getInfoByName = (name) => {
 };
 
 const getInfoById = (peopleId) => {
-  const people = data.employees.filter(({ id }) => id === peopleId)[0];
+  const { id, firstName, responsibleFor, lastName } = data
+    .employees.filter(({ id: people }) => people === peopleId)[0];
   return {
-    id: people.id,
-    fullName: `${people.firstName} ${people.lastName}`,
-    species: getSpecies(people.responsibleFor),
-    locations: getLocation(people.responsibleFor),
+    id,
+    fullName: `${firstName} ${lastName}`,
+    species: getSpecies(responsibleFor),
+    locations: getLocation(responsibleFor),
   };
 };
 
@@ -46,7 +47,7 @@ const getEmployeesCoverage = (obj) => {
   if (!obj) {
     return getAllPeoples();
   }
-  if (Object.keys(obj).includes('name')) {
+  if (obj.name) {
     return getInfoByName(obj.name);
   }
   if (!checkedInput(obj)) {
@@ -55,6 +56,6 @@ const getEmployeesCoverage = (obj) => {
   return getInfoById(obj.id);
 };
 
-console.log(getEmployeesCoverage());
+console.log(getEmployeesCoverage({ name: 'Nigel' }));
 
 module.exports = getEmployeesCoverage;

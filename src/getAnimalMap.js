@@ -65,12 +65,8 @@ function getAnimalMap(options) {
   if (!options || !Object.keys(options).includes('includeNames')) {
     return getMapAllAnimals();
   }
-  if (options.sex) {
-    return getAnimalsBySex(options);
-  }
-  if (options.sorted) {
-    return getMapAnimalNamesSort();
-  }
+  if (options.sex) return getAnimalsBySex(options);
+  if (options.sorted) return getMapAnimalNamesSort();
   return getMapAnimalNames();
 }
 

@@ -11,7 +11,7 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants('location')).toBe('NW');
   });
   it('Testa se handlerElephants("popularity") retorna um número igual ou maior a 5.', () => {
-    expect(handlerElephants('popularity') >= 5).toBeTruthy();
+    expect(handlerElephants('popularity')).toBeGreaterThanOrEqual(5);
   });
   it('Testa se handlerElephants("availability") um array de dias da semana que não contém Monday', () => {
     expect(handlerElephants('availability')).not.toContain('Monday');
